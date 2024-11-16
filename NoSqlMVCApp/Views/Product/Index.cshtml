@@ -1,0 +1,32 @@
+﻿@model ProductViewModel 
+
+<section>
+    @if(Model.Products != null && Model.Products.Count() > 0)
+    {
+    <h1>All Products below</h1>
+        <ul style="display:flex;flex-direction:row;flex-wrap:wrap;text-align:center;align-items:center;justify-content:center;" >
+            @foreach (var product in Model.Products)
+            {
+                <li style="border:1px solid red;border-radius:25px;font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;display:flex;flex-direction:column;text-align:center;justify-content:center;align-items:center;">
+                    <p style="color:black;font-weight:bold;">Row key of product : @product.RowKey</p>
+                    <p>Name : @product.Name</p>
+                    <p>Price : $@product.Price</p>
+                    <p>Store Key : @product.StoreKey</p>
+                    <p>Count in stock : @product.Stock</p>
+                    <p>Color : @product.Color</p>
+                </li>
+            }
+        </ul>
+    }
+    else {
+        <h2>There is no product to show .</h2>
+    }
+</section>
+
+<hr />
+<a href="/Product/AddProduct">Add Product</a>
+<hr />
+<h1>OR</h1>
+<hr />
+<a href="/Store/Index">Get back</a>
+<hr />

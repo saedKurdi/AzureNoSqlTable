@@ -1,0 +1,28 @@
+﻿@model AddStoreViewModel
+
+<h1>ADDING STORE PAGE</h1>
+<form asp-action="AddStore" asp-controller="Store" method="post">
+    <span>
+        <input asp-for="@Model.PartitionKey" placeholder="Partition Key" />
+        <span asp-validation-for="@Model.PartitionKey" style="color:red;"></span>
+    </span>
+    <span>
+        <input asp-for="@Model.StoreName" placeholder="Store Name" />
+        <span asp-validation-for="@Model.StoreName" style="color:red;"></span>
+    </span>
+    <span>
+        <input asp-for="@Model.CountryName" placeholder="Country Name" />
+        <span asp-validation-for="@Model.CountryName" style="color:red;"></span>
+    </span>
+    <span>
+        <input asp-for="@Model.CityName" placeholder="City Name" />
+        <span asp-validation-for="@Model.CityName" style="color:red;"></span>
+    </span>
+    <span>
+        <input asp-for="@Model.Address" placeholder="Address" />
+        <span asp-validation-for="@Model.Address" style="color:red;"></span>
+    </span>
+    <button type="submit">Add Store</button>
+</form>
+<a href="/Store/Index">Back</a>
+<div asp-validation-summary="All" class="text-danger"></div>

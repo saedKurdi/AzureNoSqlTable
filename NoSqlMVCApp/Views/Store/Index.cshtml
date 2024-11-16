@@ -1,0 +1,32 @@
+﻿@model StoreViewModel
+
+<section>
+    @if (Model.Stores != null && Model.Stores.Count() > 0)
+    {
+        <h1>All Stores below</h1>
+        <ul style="display:flex;flex-direction:row;flex-wrap:wrap;text-align:center;align-items:center;justify-content:center;">
+            @foreach (var store in Model.Stores)
+            {
+                <li style="border:1px solid red;border-radius:25px;font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;display:flex;flex-direction:column;text-align:center;justify-content:center;align-items:center;">
+                    <p style="color:black;font-weight:bold;">Row key of store : @store.RowKey</p>
+                    <p>Name : @store.Name</p>
+                    <p>Country name : @store.CountryName</p>
+                    <p>City name : @store.CityName</p>
+                    <p>Address : @store.Address</p>
+                </li>
+            }
+        </ul>
+    }
+    else
+    {
+        <h2>There is no store to show .</h2>
+    }
+</section>
+
+<hr />
+<a href="/Store/AddStore">Add Store</a>
+<hr />
+<h1>OR</h1>
+<hr />
+<a href="/Product/Index">Show Products</a>
+<hr />
